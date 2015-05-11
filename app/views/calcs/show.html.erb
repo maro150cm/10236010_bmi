@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @calc.name %>
+</p>
+
+<p>
+  <strong>Body height:</strong>
+  <%= @calc.body_height %>
+</p>
+
+<p>
+  <strong>Body weight:</strong>
+  <%= @calc.body_weight %>
+</p>
+
+<%= link_to 'Edit', edit_calc_path(@calc) %> |
+<%= link_to 'Back', calcs_path %>

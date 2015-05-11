@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Calcs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Body height(cm)</th>
+      <th>Body weight(kg)</th>
+      <th>BMI</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @calcs.each do |calc| %>
+      <tr>
+        <td><%= calc.name %></td>
+        <td><%= calc.body_height %></td>
+        <td><%= calc.body_weight %></td>
+        <td><%= calc_bmi(calc.body_height,calc.body_weight) %></td>
+        <td><%= link_to 'Show', calc %></td>
+        <td><%= link_to 'Edit', edit_calc_path(calc) %></td>
+        <td><%= link_to 'Destroy', calc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'New Calc', new_calc_path %>
